@@ -248,6 +248,150 @@
 
             </div>
 
+            <div class="card">
+
+                <div class="card-inner">
+
+                    <div class="card-front bg-white shadow-xl flex items-center justify-center">
+                        <img src="https://upload.wikimedia.org/wikipedia/pt/3/3e/Taylor_Swift_%C3%81lbum.jpg"
+                            class="w-52 rounded-xl">
+                    </div>
+
+                    <div class="card-back bg-indigo-200 flex items-center justify-center text-center p-6">
+                        <p class="font-bold text-lg">
+                            Taylor Swift (debut)<br>
+                            O ínicio da jornada country.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <div class="card-inner">
+
+                    <div class="card-front bg-white shadow-xl flex items-center justify-center">
+                        <img src="https://i.scdn.co/image/ab67616d0000b2735ab4f806b1126caf63492fc5"
+                            class="w-52 rounded-xl">
+                    </div>
+
+                    <div class="card-back bg-indigo-200 flex items-center justify-center text-center p-6">
+                        <p class="font-bold text-lg">
+                            Fearless<br>
+                            O country romântico e cheio de hits.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <div class="card-inner">
+
+                    <div class="card-front bg-white shadow-xl flex items-center justify-center">
+                        <img src="https://i.scdn.co/image/ab67616d0000b273e787cffec20aa2a396a61647"
+                            class="w-52 rounded-xl">
+                    </div>
+
+                    <div class="card-back bg-indigo-200 flex items-center justify-center text-center p-6">
+                        <p class="font-bold text-lg">
+                            Lover<br>
+                            Romance, cores e liberdade.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-inner">
+
+                    <div class="card-front bg-white shadow-xl flex items-center justify-center">
+                        <img src="https://i.scdn.co/image/ab67616d0000b273e787cffec20aa2a396a61647"
+                            class="w-52 rounded-xl">
+                    </div>
+
+                    <div class="card-back bg-indigo-200 flex items-center justify-center text-center p-6">
+                        <p class="font-bold text-lg">
+                            Lover<br>
+                            Romance, cores e liberdade.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-inner">
+
+                    <div class="card-front bg-white shadow-xl flex items-center justify-center">
+                        <img src="https://i.scdn.co/image/ab67616d0000b273e787cffec20aa2a396a61647"
+                            class="w-52 rounded-xl">
+                    </div>
+
+                    <div class="card-back bg-indigo-200 flex items-center justify-center text-center p-6">
+                        <p class="font-bold text-lg">
+                            Lover<br>
+                            Romance, cores e liberdade.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-inner">
+
+                    <div class="card-front bg-white shadow-xl flex items-center justify-center">
+                        <img src="https://i.scdn.co/image/ab67616d0000b273e787cffec20aa2a396a61647"
+                            class="w-52 rounded-xl">
+                    </div>
+
+                    <div class="card-back bg-indigo-200 flex items-center justify-center text-center p-6">
+                        <p class="font-bold text-lg">
+                            Lover<br>
+                            Romance, cores e liberdade.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-inner">
+
+                    <div class="card-front bg-white shadow-xl flex items-center justify-center">
+                        <img src="https://i.scdn.co/image/ab67616d0000b273e787cffec20aa2a396a61647"
+                            class="w-52 rounded-xl">
+                    </div>
+
+                    <div class="card-back bg-indigo-200 flex items-center justify-center text-center p-6">
+                        <p class="font-bold text-lg">
+                            Lover<br>
+                            Romance, cores e liberdade.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
 
     </section>
