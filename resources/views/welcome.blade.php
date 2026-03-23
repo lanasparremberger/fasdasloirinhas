@@ -9,9 +9,8 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-    <!-- Particles -->
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
-
+    @vite(['resources/css/welcome_style.css', 'resources/js/welcome_script.js'])
     <style>
         .era {
             padding: 40px;
@@ -151,9 +150,10 @@
 
             <nav class="space-x-6 font-semibold">
 
-                <a href="#taylor" class="hover:text-pink-500">Eras</a>
-                <a href="#sabrina" class="hover:text-purple-500">Musicas</a>
-                <a href="#galeria" class="hover:text-indigo-500">Galeria</a>
+                <a href="#eras" class="hover:text-pink-500">Eras</a>
+                <a href="#musicas" class="hover:text-purple-500">Musicas</a>
+                <a href="#posts" class="hover:text-indigo-500">Posts</a>
+                <a href="#qsn" class="hover:text-sky-500">Quem somos nós?</a>
 
             </nav>
 
@@ -167,13 +167,13 @@
 
         <div id="slider" class="absolute inset-0">
 
-            <img src="https://cdn.wallpapersafari.com/29/56/EMzRax.jpg"
+            <img src="{{ asset('imgs/hero/taylortheeras.webp') }}"
                 class="slide absolute w-full h-full object-cover opacity-100 transition-opacity duration-1000">
 
-            <img src="https://pbs.twimg.com/media/Fm6pWFLaEAEz-dx.jpg"
+            <img src="{{ asset('imgs/hero/taylordorothea.jpg') }}"
                 class="slide absolute w-full h-full object-cover opacity-0 transition-opacity duration-1000">
 
-            <img src="https://w0.peakpx.com/wallpaper/189/822/HD-wallpaper-taylor-swift-in-red-lightning-background-wearing-glittering-dress-singing-celebrities.jpg"
+            <img src="{{ asset('imgs/hero/taylorred.jpg') }}"
                 class="slide absolute w-full h-full object-cover opacity-0 transition-opacity duration-1000">
 
         </div>
@@ -195,7 +195,7 @@
     </section>
     <!-- TAYLOR -->
 
-    <section id="taylor reveal" class="py-24">
+    <section id="eras reveal" class="py-24">
 
         <h2 class="text-4xl font-bold text-center mb-16 text-purple-600">
             Álbuns da Taylor
@@ -208,8 +208,7 @@
                 <div class="card-inner">
 
                     <div class="card-front bg-white shadow-xl flex items-center justify-center">
-                        <img src="https://upload.wikimedia.org/wikipedia/pt/3/3e/Taylor_Swift_%C3%81lbum.jpg"
-                            class="w-52 rounded-xl">
+                        <img src="{{ asset('imgs/albuns/debut.jpg') }}" class="w-52 rounded-xl">
                     </div>
 
                     <div class="card-back bg-lime-200 flex items-center justify-center text-center p-6">
@@ -233,8 +232,7 @@
                 <div class="card-inner">
 
                     <div class="card-front bg-white shadow-xl flex items-center justify-center">
-                        <img src="https://i.scdn.co/image/ab67616d0000b2735ab4f806b1126caf63492fc5"
-                            class="w-52 rounded-xl">
+                        <img src="{{ asset('imgs/albuns/fearless.jfif') }}" class="w-52 rounded-xl">
                     </div>
 
                     <div class="card-back bg-yellow-200 flex items-center justify-center text-center p-6">
@@ -253,8 +251,7 @@
                 <div class="card-inner">
 
                     <div class="card-front bg-white shadow-xl flex items-center justify-center">
-                        <img src="https://upload.wikimedia.org/wikipedia/pt/0/00/Taylor_Swift_-_Speak_Now.jpg"
-                            class="w-52 rounded-xl">
+                        <img src="{{ asset('imgs/albuns/speaknow.jpg') }}" class="w-52 rounded-xl">
                     </div>
 
                     <div class="card-back bg-violet-200 flex items-center justify-center text-center p-6">
@@ -274,8 +271,7 @@
                 <div class="card-inner">
 
                     <div class="card-front bg-white shadow-xl flex items-center justify-center">
-                        <img src="https://i.scdn.co/image/ab67616d0000b27396384c98ac4f3e7c2440f5b5"
-                            class="w-52 rounded-xl">
+                        <img src="{{ asset('imgs/albuns/red.jfif') }}" class="w-52 rounded-xl">
                     </div>
 
                     <div class="card-back bg-red-400 flex items-center justify-center text-center p-6">
@@ -294,8 +290,7 @@
                 <div class="card-inner">
 
                     <div class="card-front bg-white shadow-xl flex items-center justify-center">
-                        <img src="https://akamai.sscdn.co/uploadfile/letras/albuns/e/f/e/5/376171685470680.jpg"
-                            class="w-52 rounded-xl">
+                        <img src="{{ asset('imgs/albuns/nineteen.avif') }}" class="w-52 rounded-xl">
                     </div>
 
                     <div class="card-back bg-sky-200 flex items-center justify-center text-center p-6">
@@ -314,8 +309,7 @@
                 <div class="card-inner">
 
                     <div class="card-front bg-white shadow-xl flex items-center justify-center">
-                        <img src="https://i.scdn.co/image/ab67616d0000b273da5d5aeeabacacc1263c0f4b"
-                            class="w-52 rounded-xl">
+                        <img src="{{ asset('imgs/albuns/reputation.jfif') }}" class="w-52 rounded-xl">
                     </div>
 
                     <div class="card-back bg-gray-200 flex items-center justify-center text-center p-6">
@@ -335,8 +329,7 @@
                 <div class="card-inner">
 
                     <div class="card-front bg-white shadow-xl flex items-center justify-center">
-                        <img src="https://i.scdn.co/image/ab67616d0000b273e787cffec20aa2a396a61647"
-                            class="w-52 rounded-xl">
+                        <img src="{{ asset('imgs/albuns/lover.jfif') }}" class="w-52 rounded-xl">
                     </div>
 
                     <div class="card-back bg-pink-200 flex items-center justify-center text-center p-6">
@@ -355,8 +348,7 @@
                 <div class="card-inner">
 
                     <div class="card-front bg-white shadow-xl flex items-center justify-center">
-                        <img src="https://akamai.sscdn.co/uploadfile/letras/albuns/0/1/1/6/932571680531157.jpg"
-                            class="w-52 rounded-xl">
+                        <img src="{{ asset('imgs/albuns/folklore.avif') }}" class="w-52 rounded-xl">
                     </div>
 
                     <div class="card-back bg-zinc-200 flex items-center justify-center text-center p-6">
@@ -376,8 +368,7 @@
                 <div class="card-inner">
 
                     <div class="card-front bg-white shadow-xl flex items-center justify-center">
-                        <img src="https://akamai.sscdn.co/uploadfile/letras/albuns/e/a/8/a/991101607683335.jpg"
-                            class="w-52 rounded-xl">
+                        <img src="{{ asset('imgs/albuns/evermore.avif') }}" class="w-52 rounded-xl">
                     </div>
 
                     <div class="card-back bg-yellow-600 flex items-center justify-center text-center p-6">
@@ -398,8 +389,7 @@
                 <div class="card-inner">
 
                     <div class="card-front bg-white shadow-xl flex items-center justify-center">
-                        <img src="https://i.scdn.co/image/ab67616d0000b273a48964b5d9a3d6968ae3e0de"
-                            class="w-52 rounded-xl">
+                        <img src="{{ asset('imgs/albuns/fearlesstv.jfif') }}" class="w-52 rounded-xl">
                     </div>
 
                     <div class="card-back bg-amber-200 flex items-center justify-center text-center p-6">
@@ -418,8 +408,7 @@
                 <div class="card-inner">
 
                     <div class="card-front bg-white shadow-xl flex items-center justify-center">
-                        <img src="https://i.scdn.co/image/ab67616d0000b273318443aab3531a0558e79a4d"
-                            class="w-52 rounded-xl">
+                        <img src="{{ asset('imgs/albuns/redtv.jfif') }}" class="w-52 rounded-xl">
                     </div>
 
                     <div class="card-back bg-red-300 flex items-center justify-center text-center p-6">
@@ -439,8 +428,7 @@
                 <div class="card-inner">
 
                     <div class="card-front bg-white shadow-xl flex items-center justify-center">
-                        <img src="https://akamai.sscdn.co/uploadfile/letras/albuns/a/5/c/f/1398201666349375.jpg"
-                            class="w-52 rounded-xl">
+                        <img src="{{ asset('imgs/albuns/midnights.avif') }}" class="w-52 rounded-xl">
                     </div>
 
                     <div class="card-back bg-blue-300 flex items-center justify-center text-center p-6">
@@ -459,8 +447,7 @@
                 <div class="card-inner">
 
                     <div class="card-front bg-white shadow-xl flex items-center justify-center">
-                        <img src="https://i.scdn.co/image/ab67616d0000b2730b04da4f224b51ff86e0a481"
-                            class="w-52 rounded-xl">
+                        <img src="{{ asset('imgs/albuns/speaknowtv.jfif') }}" class="w-52 rounded-xl">
                     </div>
 
                     <div class="card-back bg-indigo-200 flex items-center justify-center text-center p-6">
@@ -480,8 +467,7 @@
                 <div class="card-inner">
 
                     <div class="card-front bg-white shadow-xl flex items-center justify-center">
-                        <img src="https://i.scdn.co/image/ab67616d00001e02904445d70d04eb24d6bb79ac"
-                            class="w-52 rounded-xl">
+                        <img src="{{ asset('imgs/albuns/1989tv.jfif') }}" class="w-52 rounded-xl">
                     </div>
 
                     <div class="card-back bg-blue-200 flex items-center justify-center text-center p-6">
@@ -501,8 +487,7 @@
                 <div class="card-inner">
 
                     <div class="card-front bg-white shadow-xl flex items-center justify-center">
-                        <img src="https://i.scdn.co/image/ab67616d0000b2738ecc33f195df6aa257c39eaa"
-                            class="w-52 rounded-xl">
+                        <img src="{{ asset('imgs/albuns/ttpd.jfif') }}" class="w-52 rounded-xl">
                     </div>
 
                     <div class="card-back bg-stone-200 flex items-center justify-center text-center p-6">
@@ -521,8 +506,7 @@
                 <div class="card-inner">
 
                     <div class="card-front bg-white shadow-xl flex items-center justify-center">
-                        <img src="https://i.scdn.co/image/ab67616d0000b273d7812467811a7da6e6a44902"
-                            class="w-52 rounded-xl">
+                        <img src="{{ asset('imgs/albuns/showgirl.jfif') }}" class="w-52 rounded-xl">
                     </div>
 
                     <div class="card-back bg-orange-300 flex items-center justify-center text-center p-6">
@@ -714,12 +698,48 @@
 
         <div class="flex flex-wrap justify-center gap-10">
 
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/53iuhJlwXhSER5J2IYYv1W"
+                width="300" height="80" allowfullscreen="" loading="lazy"></iframe>
+
             <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0V3wPSX9ygBnCm8psDIegu"
                 width="300" height="80" allowfullscreen="" loading="lazy">
             </iframe>
 
-            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1VdZ0vKfR5jneCmWIUAMxK"
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3yWuTOYDztXjZxdE2cIRUa"
                 width="300" height="80" allowfullscreen="" loading="lazy">
+            </iframe>
+
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1BxfuPKGuaTgP7aM0Bbdwr"
+                width="300" height="80" allowfullscreen="" loading="lazy">
+            </iframe>
+
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0ug5NqcwcFR2xrfTkc7k8e"
+                width="300" height="80" allowfullscreen="" loading="lazy">
+            </iframe>
+
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4R2kfaDFhslZEMJqAFNpdd"
+                width="300" height="80" allowfullscreen="" loading="lazy">
+
+            </iframe>
+
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2OzhQlSqBEmt7hmkYxfT6m"
+                width="300" height="80" allowfullscreen="" loading="lazy">
+
+            </iframe>
+
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1R0a2iXumgCiFb7HEZ7gUE"
+                width="300" height="80" allowfullscreen="" loading="lazy">
+
+            </iframe>
+
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/786NsUYn4GGUf8AOt0SQhP"
+                width="300" height="80" allowfullscreen="" loading="lazy">
+
+            </iframe>
+
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/57w0Uyk2jJAkO2hMJ36xJZ"
+                width="300" height="80" allowfullscreen="" loading="lazy">
+
             </iframe>
 
         </div>
@@ -781,6 +801,10 @@
 
             <div onclick="setEra('ttpd')" class="era bg-stone-300 text-black">
                 TTPD
+            </div>
+
+            <div onclick="setEra('showgirl')" class="era bg-orange-400">
+                Showgirl
             </div>
 
         </div>
@@ -941,6 +965,9 @@
 
                 case "ttpd":
                     document.body.style.background = "linear-gradient(135deg,#f5f5f4,#a8a29e)";
+                    break;
+                case "showgirl":
+                    document.body.style.background = "linear-gradient(135deg,#FB923C,#F97F1C)";
                     break;
             }
         }
