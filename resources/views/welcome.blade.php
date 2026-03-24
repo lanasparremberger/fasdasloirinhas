@@ -10,6 +10,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <link rel="stylesheet" href="{{asset('resources/css/welcome_style.css')}}">
     @vite(['resources/css/welcome_style.css', 'resources/js/welcome_script.js'])
     <style>
         .era {
