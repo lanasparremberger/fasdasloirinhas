@@ -19,7 +19,7 @@ class MusicaControler extends Controller
      */
     public function create()
     {
-        //
+        return view('cadastro_musica');
     }
 
     /**

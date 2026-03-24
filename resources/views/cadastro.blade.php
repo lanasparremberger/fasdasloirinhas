@@ -5,64 +5,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset("css/cadastro_user_style.css") }}">
-    <title>Modern Login Page | AsmrProg</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset('css/cadastro_user_style.css') }}">
+    <title>Cadastro ou Login</title>
 </head>
 
 <body>
-@include('header')
- <div class="main-content">
-    <div class="container" id="container">
-        <div class="form-container sign-up">
-            <form>
-                <h1>Create Account</h1>
-                <div class="social-icons">
-                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
-                </div>
-                <span>or use your email for registeration</span>
-                <input type="text" placeholder="Name">
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
-                <button>Sign Up</button>
-            </form>
-        </div>
-        <div class="form-container sign-in">
-            <form>
-                <h1>Sign In</h1>
-                <div class="social-icons">
-                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
-                </div>
-                <span>or use your email password</span>
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
-                <a href="#">Forget Your Password?</a>
-                <button>Sign In</button>
-            </form>
-        </div>
-        <div class="toggle-container">
-            <div class="toggle">
-                <div class="toggle-panel toggle-left">
-                    <h1>Welcome Back!</h1>
-                    <p>Enter your personal details to use all of site features</p>
-                    <button class="" id="login">Sign In</button>
-                </div>
-                <div class="toggle-panel toggle-right">
-                    <h1>Hello, Friend!</h1>
-                    <p>Register with your personal details to use all of site features</p>
-                    <button class="" id="register">Sign Up</button>
+    @include('header')
+    <div class="main-content">
+        <div class="container" id="container">
+            <div class="form-container sign-up">
+                <form>
+                    <h1>Entre na sua conta</h1>
+                    <input type="text" placeholder="Nome de Usuário">
+                    <input type="password" placeholder="Senha">
+                    <button>Entre</button>
+                </form>
+            </div>
+            <div class="form-container sign-in">
+                <form>
+                    <h1>Cadastra-se</h1>
+                    <input type="email" placeholder="Email">
+                    <input type="text" placeholder="Nome de Usuário">
+                    <input type="password" placeholder="Senha">
+                    <button>Cadastrar</button>
+                </form>
+            </div>
+            <div class="toggle-container">
+                <div class="toggle">
+                    <div class="toggle-panel toggle-left">
+                        <h1>Bem vindo de volta!</h1>
+                        <p>Coloque seus dados para poder utilizar a plataforma</p>
+                        <button class="" id="login">Entrar</button>
+                    </div>
+                    <div class="toggle-panel toggle-right">
+                        <h1>Olá!</h1>
+                        <p>Cadastra-se para usufruir da plataforma</p>
+                        <button class="" id="register">Cadastrar-se</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
- </div>
-    <script src="{{ asset("script/cadastro_user_script.js") }}"></script>
+    <script src="{{ asset('script/cadastro_user_script.js') }}"></script>
 </body>
 
 </html>

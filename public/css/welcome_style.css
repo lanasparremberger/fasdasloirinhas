@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
 .era {
     padding: 40px;
     border-radius: 16px;
@@ -15,6 +16,7 @@
 
 body {
     background: linear-gradient(135deg, #fdf2f8, #e0e7ff);
+    font-family: "Montserrat", sans-serif;
 }
 
 /* cards giratorios */
@@ -206,4 +208,8 @@ body {
     );
     opacity: 0;
     transition: opacity 0.2s;
+}
+
+h1{
+    font-family: 'Playfair Display', serif;
 }
