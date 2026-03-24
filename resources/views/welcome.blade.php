@@ -10,8 +10,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
-    <link rel="stylesheet" href="{{asset('resources/css/welcome_style.css')}}">
-    @vite(['resources/css/welcome_style.css', 'resources/js/welcome_script.js'])
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset('resources/css/welcome_style.css') }}">
     <style>
         .era {
             padding: 40px;
@@ -128,6 +128,115 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 
         }
+    
+.animated-bg {
+    background: linear-gradient(270deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
+    background-size: 800% 800%;
+    animation: gradientMove 15s ease infinite;
+    z-index: -2;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: -1;
+}
+
+.stars::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    box-shadow:
+        100px 200px white,
+        300px 400px white,
+        500px 100px white,
+        700px 300px white,
+        900px 200px white;
+    animation: floatStars 10s linear infinite;
+}
+
+@keyframes floatStars {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-1000px);
+    }
+}
+
+.social-btn {
+    padding: 10px 18px;
+    border-radius: 12px;
+    color: white;
+    transition: 0.3s;
+    transform: scale(1);
+}
+
+.social-btn:hover {
+    transform: scale(1.1);
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fade-in 1s ease-out;
+}
+.card-3d {
+    width: 260px;
+    height: 320px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+.card-content {
+    padding: 20px;
+    transform: translateZ(40px);
+}
+
+.glare {
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    background: radial-gradient(
+        circle at 50% 50%,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
     </style>
 
 </head>
@@ -527,7 +636,7 @@
 
     </section>
 
-    <!-- SABRINA -->
+    <!-- linha do tempo -->
 
 
     <section class="py-28">
@@ -691,7 +800,7 @@
 
 
 
-    <section class="py-20 text-center">
+    <section id="musicas" class="py-20 text-center">
 
         <h2 class="text-4xl font-bold mb-10">
             Ouça as músicas
@@ -812,17 +921,16 @@
 
     </section>
 
-    <!-- GALERIA -->
-
-    <section id="galeria" class="py-24">
+    <!-- posts -->
+    {{-- todo add os posts aq tirados do banco --}}
+    <section id="posts" class="py-24">
 
         <h2 class="text-4xl font-bold text-center mb-16">
-            The Life of the Taylor Swift
+            The Life of the Swifties
         </h2>
 
         <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
 
-            {{-- <img src="{{ asset('imgs/show.jpg') }}" class="rounded-xl hover:scale-105 transition"> --}}
 
             <img src="https://image.stern.de/34908840/t/AU/v5/w1440/r1.7778/-/taylorswift.jpg"
                 class="rounded-xl hover:scale-105 transition">
@@ -836,6 +944,92 @@
         </div>
 
     </section>
+
+    <section id="qsn" class="relative py-32 overflow-hidden">
+
+        <div class="absolute inset-0 animated-bg"></div>
+
+        <div class="stars"></div>
+
+        <div class="relative max-w-6xl mx-auto px-6">
+
+            <h2 class="text-center text-4xl md:text-5xl font-bold text-white mb-6">
+                Feito com my blood, sweat and tears for this
+            </h2>
+
+            <p class="text-center text-white/80 mb-16">
+                Valeu ai pro Roger que não me xingou quando eu disse que ia fazer <i> outro </i> site da loirinha. (Ele xingou, eu que ignorei) 
+            </p>
+
+            <!-- 🪩 Glass Card -->
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+
+                <!-- TEXTO -->
+                <div
+                    class="backdrop-blur-xl bg-white/10 p-8 rounded-3xl shadow-2xl border border-white/20 animate-fade-in">
+
+                    <h3 class="text-2xl font-bold text-white mb-4">
+                        Sobre o Projeto 
+                    </h3>
+
+                    <p class="text-white/80 leading-relaxed">
+                        Esse site foi criado para reunir eras, álbuns e momentos icônicos.
+                        Um espaço feito por fãs, para fãs 
+                    </p>
+
+                    <!-- LINKS -->
+                    <div class="flex gap-4 mt-6 flex-wrap">
+
+                        <a href="https://github.com/lanasparremberger" target="_blank"
+                            class="social-btn bg-orange-300/80 hover:bg-orange-300">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+
+                        <a href="https://www.instagram.com/lana.sparremberger/" target="_blank"
+                            class="social-btn bg-pink-500/80 hover:bg-pink-500">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+
+                        <a href="https://x.com/evermorepeeta" target="_blank"
+                            class="social-btn bg-blue-400/80 hover:bg-blue-400">
+                            <i class="fa-brands fa-twitter" style="color: rgb(255, 255, 255);"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- FOTO -->
+                <div class="flex justify-center items-center py-20">
+
+                    <div class="card-3d">
+                        <div class="card-content">
+
+                            <img src="{{asset('imgs/quemsomosnos/eunatheeras.jpg')}}" alt="Lana Sparremberger"
+                                class="w-28 h-28 rounded-full mx-auto mb-4 border-4 border-pink-300 object-cover">
+
+                            <h3 class="text-xl font-bold text-white text-center">
+                                Lana Sparremberger
+                            </h3>
+
+                            <p class="text-white/70 text-center">
+                                Desenvolvedora, <i> swiftie</i> e criadora deste site.
+                            </p>
+
+                        </div>
+
+                        <!-- brilho -->
+                        <div class="glare"></div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+    </section>
+
 
     <!-- SCRIPT PARTICLES -->
 
@@ -1000,11 +1194,39 @@
 
         setInterval(() => {
 
-            slides[index].style.opacity = 0
-            index = (index + 1) % slides.length
-            slides[index].style.opacity = 1
+                slides[index].style.opacity = 0
+                index = (index + 1) % slides.length
+                slides[index].style.opacity = 1
 
-        }, 4000)
+            }, 4000)
+
+        
+            const card = document.querySelector(".card-3d");
+        const glare = document.querySelector(".glare");
+
+        card.addEventListener("mousemove", (e) => {
+            const rect = card.getBoundingClientRect();
+
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            const rotateX = -(y - centerY) / 10;
+            const rotateY = (x - centerX) / 10;
+
+            card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+
+            glare.style.opacity = "1";
+            glare.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,255,255,0.5), transparent)`;
+        });
+
+        card.addEventListener("mouseleave", () => {
+            card.style.transform = "rotateX(0deg) rotateY(0deg)";
+            glare.style.opacity = "0";
+        });
+    
     </script>
 
 </body>
