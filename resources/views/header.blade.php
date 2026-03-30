@@ -1,21 +1,38 @@
+<header id="mainHeader"
+class="fixed top-0 left-0 w-full bg-white/60 backdrop-blur-lg border-b border-pink-100 transition-all duration-300 z-50">
 
-<header class="fixed w-full backdrop-blur-md bg-white/30 border-b border-white/20 z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-8 py-4">
 
-        <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+        <!-- LOGO -->
+        <a href="{{ route('index') }}"
+            class="text-3xl font-extrabold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+            Swiftly
+        </a>
 
-            <h1 class="text-2xl font-bold bg-pink-500 bg-clip-text text-transparent">
-                Swiftly
-            </h1>
+        <!-- NAV -->
+        <nav class="flex items-center gap-8 text-gray-600 font-medium">
 
-            <nav class="space-x-6 font-semibold">
+            <a href="{{ route('usuario.create') }}"
+                class="{{ request()->routeIs('usuario.create') ? 'text-pink-500 font-semibold' : 'text-gray-600' }} hover:text-pink-500 transition">
+                Entrar
+            </a>
 
-                <a href="#eras" class="hover:text-pink-500">Entre</a>
-                <a href="#musicas" class="hover:text-purple-500">Feed</a>
-                <a href="#posts" class="hover:text-indigo-500">Os mais comentados</a>
-                <a href="#qsn" class="hover:text-sky-500">Insira uma musica</a>
+            <a href="#musicas" class="hover:text-purple-500 transition hover:scale-105">
+                Feed
+            </a>
 
-            </nav>
+            <a href="#posts" class="hover:text-indigo-500 transition hover:scale-105">
+                Comentados
+            </a>
 
-        </div>
+            <!-- BOTÃO DESTACADO -->
+            <a href="{{ route('musica.create') }}"
+                class="{{ request()->routeIs('musica.create') ? 'text-purple-500 font-semibold' : 'text-gray-600' }} hover:text-purple-500 transition">
+                + Música
+            </a>
 
-    </header>
+        </nav>
+
+    </div>
+
+</header>

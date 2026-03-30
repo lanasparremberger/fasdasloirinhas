@@ -190,4 +190,14 @@
             card.style.transform = "rotateX(0deg) rotateY(0deg)";
             glare.style.opacity = "0";
         });
-    
+     const header = document.getElementById('mainHeader');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('bg-white', 'shadow-md');
+            header.classList.remove('bg-white/60');
+        } else {
+            header.classList.remove('bg-white', 'shadow-md');
+            header.classList.add('bg-white/60');
+        }
+    });

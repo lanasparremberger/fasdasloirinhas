@@ -7,13 +7,14 @@
 
     <title>Swiftly</title>
 <script src="https://cdn.tailwindcss.com"></script>
+<link rel="icon" type="image/x-icon" href="{{asset('imgs/link/icon.png')}}">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="{{ asset('css/welcome_style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/index_style.css') }}">
 
 </head>
 
@@ -61,14 +62,28 @@
 
     </section>
     <!-- TAYLOR -->
-    <nav class="space-x-6 font-semibold">
+   <!-- NAV SEÇÕES -->
+<nav class="w-full bg-white/80 backdrop-blur-md shadow-md sticky top-0 z-20">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-center space-x-8 font-semibold text-gray-700">
+        
+        <a href="#eras" class="hover:text-pink-500 transition">
+            Eras
+        </a>
 
-                <a href="#eras" class="hover:text-pink-500">Eras</a>
-                <a href="#musicas" class="hover:text-purple-500">Musicas</a>
-                <a href="#posts" class="hover:text-indigo-500">Posts</a>
-                <a href="#qsn" class="hover:text-sky-500">Quem somos nós?</a>
+        <a href="#musicas" class="hover:text-purple-500 transition">
+            Músicas
+        </a>
 
-            </nav>
+        <a href="#posts" class="hover:text-indigo-500 transition">
+            Posts
+        </a>
+
+        <a href="#qsn" class="hover:text-sky-500 transition">
+            Quem somos?
+        </a>
+
+    </div>
+</nav>
 
     <section id=" reveal" class="py-24">
 
@@ -797,7 +812,7 @@
 
 
 
-    <script src="{{asset ('script/welcome_script.js')}}"></script>
+    <script src="{{asset ('script/index_script.js')}}"></script>
 
 </body>
 
