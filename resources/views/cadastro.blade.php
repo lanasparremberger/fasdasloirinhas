@@ -9,14 +9,19 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('css/cadastro_user_style.css') }}">
     <title>Cadastro ou Login</title>
 </head>
 
 <body>
-    @include('header')
+    @include('components/header')
     <div class="main-content">
+        <canvas id="stars" class="fixed inset-0 -z-10"></canvas>
+        <!-- PARTICULAS -->
+
+    <div id="particles" class="fixed inset-0 -z-10"></div>
         <div class="container" id="container">
             <div class="form-container sign-up">
                 <form>
@@ -38,14 +43,15 @@
             <div class="toggle-container">
                 <div class="toggle">
                     <div class="toggle-panel toggle-left">
-                        <h1>Bem vindo de volta!</h1>
-                        <p>Coloque seus dados para poder utilizar a plataforma</p>
-                        <button class="" id="login">Entrar</button>
-                    </div>
-                    <div class="toggle-panel toggle-right">
                         <h1>Olá!</h1>
                         <p>Cadastra-se para usufruir da plataforma</p>
-                        <button class="" id="register">Cadastrar-se</button>
+                        <button class="" id="login">Cadastrar-se</button>
+                        
+                    </div>
+                    <div class="toggle-panel toggle-right">
+                        <h1>Bem vindo de volta!</h1>
+                        <p>Coloque seus dados para poder utilizar a plataforma</p>
+                        <button class="" id="register">Entrar</button>
                     </div>
                 </div>
             </div>

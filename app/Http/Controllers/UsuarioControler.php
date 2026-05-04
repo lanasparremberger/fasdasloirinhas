@@ -11,7 +11,7 @@ class UsuarioControler extends Controller
      */
     public function index()
     {
-        return "Página Inicial do site";
+        return view('index');
     }
 
     /**
@@ -27,7 +27,8 @@ class UsuarioControler extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dado = $request->except('_token');
+        // return view('printar_usuario', ['dado' => $dado]);
     }
 
     /**

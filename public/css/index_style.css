@@ -213,3 +213,73 @@ body {
 h1{
     font-family: 'Playfair Display', serif;
 }
+
+
+
+/* animação dos cards */
+.timeline-item {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 0.8s ease;
+}
+
+.timeline-item.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 0;
+    border-radius: 999px;
+
+    background: linear-gradient(
+        to bottom,
+        #22c55e,   /* Debut */
+        #facc15,   /* Fearless */
+        #a855f7,   /* Speak Now */
+        #ef4444,   /* Red */
+        #38bdf8,   /* 1989 */
+        #111827,   /* Reputation */
+        #ec4899,   /* Lover */
+        #9ca3af,   /* Folklore */
+        #92400e,   /* Evermore */
+        #4f46e5,   /* Midnights */
+        #1f2937,   /* TTPD */
+        #ff9100    /* Showgirl */
+    );
+
+    transition: height 0.4s ease-out, box-shadow 0.3s;
+}
+
+/* brilho no hover */
+.timeline-line:hover {
+    box-shadow: 0 0 20px rgba(255, 0, 170, 0.6),
+                0 0 40px rgba(236, 72, 153, 0.4);
+}
+.timeline-item .rounded-full {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-item:hover .rounded-full {
+    transform: scale(1.4);
+    box-shadow: 0 0 15px currentColor;
+}
+
+/* glow por era */
+.glow-green:hover { box-shadow: 0 0 25px #22c55e; }
+.glow-yellow:hover { box-shadow: 0 0 25px #facc15; }
+.glow-purple:hover { box-shadow: 0 0 25px #a855f7; }
+.glow-red:hover { box-shadow: 0 0 25px #ef4444; }
+.glow-blue:hover { box-shadow: 0 0 25px #38bdf8; }
+.glow-black:hover { box-shadow: 0 0 25px #111827; }
+.glow-pink:hover { box-shadow: 0 0 25px #ec4899; }
+.glow-gray:hover { box-shadow: 0 0 25px #9ca3af; }
+.glow-brown:hover { box-shadow: 0 0 25px #92400e; }
+.glow-indigo:hover { box-shadow: 0 0 25px #4f46e5; }
+.glow-showgirl:hover {
+    box-shadow: 0 0 30px #ff9900, 0 0 60px #ffb066;
+}

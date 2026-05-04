@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Swiftly</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="icon" type="image/x-icon" href="{{asset('imgs/link/icon.png')}}">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/x-icon" href="{{ asset('imgs/link/icon.png') }}">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
     <link
@@ -27,7 +27,7 @@
 
     <!-- NAVBAR -->
 
-    @include('header')
+    @include('components/header')
 
     <!-- HERO -->
 
@@ -62,28 +62,35 @@
 
     </section>
     <!-- TAYLOR -->
-   <!-- NAV SEÇÕES -->
-<nav class="w-full bg-white/80 backdrop-blur-md shadow-md sticky top-0 z-20">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-center space-x-8 font-semibold text-gray-700">
-        
-        <a href="#eras" class="hover:text-pink-500 transition">
-            Eras
-        </a>
+    <!-- NAV SEÇÕES -->
+    <nav class="w-full bg-white/80 backdrop-blur-md shadow-md sticky top-0 z-20">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-center space-x-8 font-semibold text-gray-700">
 
-        <a href="#musicas" class="hover:text-purple-500 transition">
-            Músicas
-        </a>
+            <a href="#eras" class="hover:text-pink-500 transition">
+                Eras
+            </a>
 
-        <a href="#posts" class="hover:text-indigo-500 transition">
-            Posts
-        </a>
+            <a href="#musicas" class="hover:text-purple-500 transition">
+                Músicas
+            </a>
 
-        <a href="#qsn" class="hover:text-sky-500 transition">
-            Quem somos?
-        </a>
+            <a href="#posts" class="hover:text-indigo-500 transition">
+                Posts
+            </a>
 
+            <a href="#qsn" class="hover:text-sky-500 transition">
+                Quem somos?
+            </a>
+
+        </div>
+    </nav>
+
+    <div class="flex justify-center mt-6">
+        <a class="text-white bg-indigo-500 px-6 py-3 rounded-lg hover:bg-indigo-600 transition"
+            href="{{ route('index_sabrina') }}">
+            Ir para página da Sabrina
+        </a>
     </div>
-</nav>
 
     <section id=" reveal" class="py-24">
 
@@ -418,8 +425,7 @@
 
     <!-- linha do tempo -->
 
-
-    <section class="py-28">
+    <section id="timeline" class="py-28">
 
         <h2 class="text-5xl font-extrabold text-center mb-24">
             Linha do Tempo — Eras da Taylor Swift
@@ -427,158 +433,145 @@
 
         <div class="relative max-w-6xl mx-auto">
 
+            <!-- linha animada -->
+            <div id="timeline-line" class="timeline-line"></div>
+
+            <!-- linha base (fundo) -->
+            <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-pink-200"></div>
+
             <!-- linha central -->
             <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-pink-400"></div>
 
+            <!-- ITEM -->
+            <!-- usa essa classe "timeline-item" pra animar -->
+
             <!-- Debut -->
-            <div class="mb-16 flex justify-between items-center w-full">
+            <div class="timeline-item mb-16 flex justify-between items-center w-full">
 
                 <div class="w-5/12"></div>
 
-                <div class="z-10 bg-pink-500 w-6 h-6 rounded-full"></div>
+                <div class="z-10 bg-green-500 w-6 h-6 rounded-full"></div>
 
-                <div class="w-5/12 bg-white p-6 rounded-xl shadow-lg">
+                <div class="w-5/12 bg-white p-6 rounded-xl shadow-lg glow-green">
                     <h3 class="text-xl font-bold text-green-600">2006 — Debut</h3>
                     <p class="text-gray-600 mt-2">
-                        O primeiro álbum de Taylor Swift apresentou sua mistura de country e pop.
-                        Com apenas 16 anos, ela começou a ganhar atenção com composições autobiográficas.
+                        Início country com letras autobiográficas.
                     </p>
                 </div>
 
             </div>
-
 
             <!-- Fearless -->
-            <div class="mb-16 flex justify-between flex-row-reverse items-center w-full">
-
+            <div class="timeline-item mb-16 flex justify-between flex-row-reverse items-center w-full">
                 <div class="w-5/12"></div>
-
-                <div class="z-10 bg-pink-500 w-6 h-6 rounded-full"></div>
-
-                <div class="w-5/12 bg-white p-6 rounded-xl shadow-lg">
+                <div class="z-10 bg-yellow-400 w-6 h-6 rounded-full"></div>
+                <div class="w-5/12 bg-white p-6 rounded-xl shadow-lg glow-yellow">
                     <h3 class="text-xl font-bold text-yellow-500">2008 — Fearless</h3>
-                    <p class="text-gray-600 mt-2">
-                        Inclui sucessos como “Love Story” e “You Belong With Me”.
-                        O álbum venceu o Grammy de Álbum do Ano.
-                    </p>
+                    <p class="text-gray-600 mt-2">Hits como Love Story. Grammy AOTY.</p>
                 </div>
-
             </div>
 
+            <!-- Speak Now -->
+            <div class="timeline-item mb-16 flex justify-between items-center w-full">
+                <div class="w-5/12 "></div>
+                <div class="z-10 bg-purple-500 w-6 h-6 rounded-full"></div>
+                <div class="w-5/12 bg-white p-6 rounded-xl shadow-lg glow-purple">
+                    <h3 class="text-xl font-bold text-purple-600">2010 — Speak Now</h3>
+                    <p class="text-gray-600 mt-2">Totalmente escrito por ela. Era roxa icônica.</p>
+                </div>
+            </div>
 
             <!-- Red -->
-            <div class="mb-16 flex justify-between items-center w-full">
-
+            <div class="timeline-item mb-16 flex justify-between flex-row-reverse items-center w-full">
                 <div class="w-5/12"></div>
-
-                <div class="z-10 bg-pink-500 w-6 h-6 rounded-full"></div>
-
-                <div class="w-5/12 bg-white p-6 rounded-xl shadow-lg">
+                <div class="z-10 bg-red-500 w-6 h-6 rounded-full"></div>
+                <div class="w-5/12 bg-white p-6 rounded-xl shadow-lg glow-red">
                     <h3 class="text-xl font-bold text-red-500">2012 — Red</h3>
-                    <p class="text-gray-600 mt-2">
-                        Uma mistura de country, pop e eletrônico.
-                        A música “All Too Well” se tornou uma das mais aclamadas da carreira.
-                    </p>
+                    <p class="text-gray-600 mt-2">Mistura de estilos. All Too Well marcou época.</p>
                 </div>
-
             </div>
-
 
             <!-- 1989 -->
-            <div class="mb-16 flex justify-between flex-row-reverse items-center w-full">
-
+            <div class="timeline-item mb-16 flex justify-between items-center w-full">
                 <div class="w-5/12"></div>
-
-                <div class="z-10 bg-pink-500 w-6 h-6 rounded-full"></div>
-
-                <div class="w-5/12 bg-white p-6 rounded-xl shadow-lg">
+                <div class="z-10 bg-sky-400 w-6 h-6 rounded-full"></div>
+                <div class="w-5/12 bg-white p-6 rounded-xl shadow-lg glow-blue">
                     <h3 class="text-xl font-bold text-sky-500">2014 — 1989</h3>
-                    <p class="text-gray-600 mt-2">
-                        Primeiro álbum totalmente pop.
-                        Inclui hits como “Shake It Off”, “Blank Space” e “Style”.
-                        Venceu o Grammy de Álbum do Ano.
-                    </p>
+                    <p class="text-gray-600 mt-2">Virada total pro pop.</p>
                 </div>
-
             </div>
-
 
             <!-- Reputation -->
-            <div class="mb-16 flex justify-between items-center w-full">
-
+            <div class="timeline-item mb-16 flex justify-between flex-row-reverse items-center w-full">
                 <div class="w-5/12"></div>
-
-                <div class="z-10 bg-pink-500 w-6 h-6 rounded-full"></div>
-
-                <div class="w-5/12 bg-white p-6 rounded-xl shadow-lg">
+                <div class="z-10 bg-gray-900 w-6 h-6 rounded-full"></div>
+                <div class="w-5/12 bg-white p-6 rounded-xl shadow-lg glow-black">
                     <h3 class="text-xl font-bold text-gray-900">2017 — Reputation</h3>
-                    <p class="text-gray-600 mt-2">
-                        Uma era mais sombria e eletrônica, criada após polêmicas públicas.
-                        A turnê do álbum quebrou recordes de bilheteria.
-                    </p>
+                    <p class="text-gray-600 mt-2">Era dark, vingança e reinvenção.</p>
                 </div>
-
             </div>
-
 
             <!-- Lover -->
-            <div class="mb-16 flex justify-between flex-row-reverse items-center w-full">
-
+            <div class="timeline-item mb-16 flex justify-between items-center w-full">
                 <div class="w-5/12"></div>
-
-                <div class="z-10 bg-pink-500 w-6 h-6 rounded-full"></div>
-
-                <div class="w-5/12 bg-white p-6 rounded-xl shadow-lg">
+                <div class="z-10 bg-pink-400 w-6 h-6 rounded-full"></div>
+                <div class="w-5/12 bg-white p-6 rounded-xl shadow-lg glow-pink">
                     <h3 class="text-xl font-bold text-pink-500">2019 — Lover</h3>
-                    <p class="text-gray-600 mt-2">
-                        Uma era colorida e romântica.
-                        O álbum traz temas de amor, maturidade e esperança.
-                    </p>
+                    <p class="text-gray-600 mt-2">Colorido, romântico e leve.</p>
                 </div>
-
             </div>
-
 
             <!-- Folklore -->
-            <div class="mb-16 flex justify-between items-center w-full">
-
+            <div class="timeline-item mb-16 flex justify-between flex-row-reverse items-center w-full">
                 <div class="w-5/12"></div>
-
-                <div class="z-10 bg-pink-500 w-6 h-6 rounded-full"></div>
-
-                <div class="w-5/12 bg-white p-6 rounded-xl shadow-lg">
+                <div class="z-10 bg-gray-400 w-6 h-6 rounded-full"></div>
+                <div class="w-5/12 bg-white p-6 rounded-xl shadow-lg glow-gray">
                     <h3 class="text-xl font-bold text-gray-500">2020 — Folklore</h3>
-                    <p class="text-gray-600 mt-2">
-                        Um álbum indie/folk lançado durante a pandemia.
-                        Ganhou o Grammy de Álbum do Ano.
-                    </p>
+                    <p class="text-gray-600 mt-2">Indie/folk introspectivo.</p>
                 </div>
-
             </div>
 
+            <!-- Evermore -->
+            <div class="timeline-item mb-16 flex justify-between items-center w-full">
+                <div class="w-5/12"></div>
+                <div class="z-10 bg-amber-700 w-6 h-6 rounded-full"></div>
+                <div class="w-5/12 bg-white p-6 rounded-xl shadow-lg glow-brown">
+                    <h3 class="text-xl font-bold text-amber-700">2020 — Evermore</h3>
+                    <p class="text-gray-600 mt-2">Continuação do folklore, mais madura.</p>
+                </div>
+            </div>
 
             <!-- Midnights -->
-            <div class="mb-16 flex justify-between flex-row-reverse items-center w-full">
-
+            <div class="timeline-item mb-16 flex justify-between flex-row-reverse items-center w-full">
                 <div class="w-5/12"></div>
-
-                <div class="z-10 bg-pink-500 w-6 h-6 rounded-full"></div>
-
-                <div class="w-5/12 bg-white p-6 rounded-xl shadow-lg">
+                <div class="z-10 bg-indigo-600 w-6 h-6 rounded-full"></div>
+                <div class="w-5/12  bg-white p-6 rounded-xl shadow-lg glow-indigo">
                     <h3 class="text-xl font-bold text-indigo-600">2022 — Midnights</h3>
-                    <p class="text-gray-600 mt-2">
-                        Explora pensamentos e histórias de noites sem dormir.
-                        Quebrou recordes de streaming no lançamento.
-                    </p>
+                    <p class="text-gray-600 mt-2">Noites, pensamentos e synth-pop.</p>
                 </div>
-
             </div>
 
+            <!-- The Tortured Poets Department -->
+            <div class="timeline-item mb-16 flex justify-between items-center w-full">
+                <div class="w-5/12"></div>
+                <div class="z-10 bg-neutral-800 w-6 h-6 rounded-full"></div>
+                <div class="w-5/12 bg-white p-6 rounded-xl shadow-lg glow-gray">
+                    <h3 class="text-xl font-bold text-neutral-800">2024 — The Tortured Poets Department</h3>
+                    <p class="text-gray-600 mt-2">Era introspectiva, lírica e mais crua emocionalmente.</p>
+                </div>
+            </div>
 
+            <!-- The Life of a Showgirl -->
+            <div class="timeline-item mb-16 flex justify-between flex-row-reverse items-center w-full">
+                <div class="w-5/12"></div>
+                <div class="z-10 bg-orange-500 w-6 h-6 rounded-full"></div>
+                <div class="w-5/12 bg-white p-6 rounded-xl shadow-lg glow-showgirl">
+                    <h3 class="text-xl font-bold text-orange-600">2025 — The Life of a Showgirl</h3>
+                    <p class="text-gray-600 mt-2">Era glamourosa e teatral inspirada na vida no palco e na fama.</p>
+                </div>
+            </div>
         </div>
     </section>
-
-
 
     <section id="musicas" class="py-20 text-center">
 
@@ -738,7 +731,8 @@
             </h2>
 
             <p class="text-center text-white/80 mb-16">
-                Valeu ai pro Roger que não me xingou quando eu disse que ia fazer <i> outro </i> site da loirinha. (Ele xingou, eu que ignorei) 
+                Valeu ai pro Roger que não me xingou quando eu disse que ia fazer <i> outro </i> site da loirinha. (Ele
+                xingou, eu que ignorei)
             </p>
 
             <!-- 🪩 Glass Card -->
@@ -749,12 +743,12 @@
                     class="backdrop-blur-xl bg-white/10 p-8 rounded-3xl shadow-2xl border border-white/20 animate-fade-in">
 
                     <h3 class="text-2xl font-bold text-white mb-4">
-                        Sobre o Projeto 
+                        Sobre o Projeto
                     </h3>
 
                     <p class="text-white/80 leading-relaxed">
                         Esse site foi criado para reunir eras, álbuns e momentos icônicos.
-                        Um espaço feito por fãs, para fãs 
+                        Um espaço feito por fãs, para fãs
                     </p>
 
                     <!-- LINKS -->
@@ -785,7 +779,7 @@
                     <div class="card-3d">
                         <div class="card-content">
 
-                            <img src="{{asset('imgs/quemsomosnos/eunatheeras.jpg')}}" alt="Lana Sparremberger"
+                            <img src="{{ asset('imgs/quemsomosnos/eunatheeras.jpg') }}" alt="Lana Sparremberger"
                                 class="w-28 h-28 rounded-full mx-auto mb-4 border-4 border-pink-300 object-cover">
 
                             <h3 class="text-xl font-bold text-white text-center">
@@ -812,7 +806,7 @@
 
 
 
-    <script src="{{asset ('script/index_script.js')}}"></script>
+    <script src="{{ asset('script/index_script.js') }}"></script>
 
 </body>
 

@@ -247,3 +247,35 @@ h1{
 .container.active .toggle-right {
     transform: translateX(200%);
 }
+
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: -1;
+}
+
+.stars::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    box-shadow:
+        100px 200px white,
+        300px 400px white,
+        500px 100px white,
+        700px 300px white,
+        900px 200px white;
+    animation: floatStars 10s linear infinite;
+}
+
+@keyframes floatStars {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-1000px);
+    }
+}

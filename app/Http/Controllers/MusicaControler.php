@@ -11,7 +11,7 @@ class MusicaControler extends Controller
      */
     public function index()
     {
-        //
+        return view('index');
     }
 
     /**
@@ -27,7 +27,8 @@ class MusicaControler extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dado = $request->except('_token');
+        // return view('printar_musica', ['dado' => $dado]);
     }
 
     /**

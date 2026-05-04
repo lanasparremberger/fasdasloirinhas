@@ -1,0 +1,73 @@
+/* Estilos base das estrelas */
+
+body{
+    background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+    height: 100vh;
+}
+        .star-icon {
+            font-size: 2.5rem; /* Tamanho da estrela */
+            cursor: pointer;
+            transition: transform 0.1s ease-in-out;
+            display: inline-block;
+            user-select: none; /* Evita selecionar o texto ao clicar rápido */
+        }
+
+        .star-icon:hover {
+            transform: scale(1.1); /* Dá um leve zoom ao passar o mouse */
+        }
+
+        /* 1. Estrela Vazia (Cinza) */
+        .star-vazia {
+            color: #d1d5db; /* gray-300 do Tailwind */
+            background: none;
+            -webkit-text-fill-color: initial;
+        }
+
+        /* 2. Estrela Cheia (Rosa) */
+        .star-cheia {
+            color: #ec4899; /* pink-500 do Tailwind */
+            background: none;
+            -webkit-text-fill-color: initial;
+        }
+
+        /* 3. Meia Estrela (Metade Rosa, Metade Cinza) */
+        .star-meia {
+            /* Cria um fundo dividido no meio */
+            background: linear-gradient(90deg, #ec4899 50%, #d1d5db 50%);
+            /* Recorta o fundo no formato do texto (a estrela) */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: -1;
+}
+
+.stars::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    box-shadow:
+        100px 200px white,
+        300px 400px white,
+        500px 100px white,
+        700px 300px white,
+        900px 200px white;
+    animation: floatStars 10s linear infinite;
+}
+
+@keyframes floatStars {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-1000px);
+    }
+}
