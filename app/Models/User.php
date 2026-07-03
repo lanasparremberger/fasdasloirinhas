@@ -27,7 +27,10 @@ class User extends Authenticatable
         'cover_image',
         'bio'
     ];
-
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
     /**
      * The attributes that should be hidden for serialization.
      *

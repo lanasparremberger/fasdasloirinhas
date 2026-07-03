@@ -1,24 +1,27 @@
 
-document.addEventListener('DOMContentLoaded', function () {
-    window.addEventListener('load', function () {
+dtinymce.init({
 
-        tinymce.init({
-            selector: '#descricao_musica', // ID do textarea
-            height: 300,
-            plugins: 'advlist autolink lists link image charmap preview anchor',
-            toolbar: 'undo redo | formatselect | bold italic backcolor | \
-                alignleft aligncenter alignright alignjustify | \
-                bullist numlist outdent indent | removeformat | help',
-            menubar: false
-        });
-        
+    selector:'#description',
 
-    });
+    height:400,
 
+    menubar:true,
 
+    plugins:[
+        'lists',
+        'link',
+        'image',
+        'table',
+        'code',
+        'fullscreen',
+        'wordcount'
+    ],
 
-    const inputImg = document.getElementById('imgInput');
-    const preview = document.getElementById('previewImg');
+    toolbar:
+    'undo redo | blocks | bold italic underline | forecolor backcolor | alignleft aligncenter alignright | bullist numlist | image link table | fullscreen | code'
+
+});
+
 
     const stars = document.querySelectorAll('.star-icon');
     const container = document.querySelector('.avaliacao');
@@ -78,22 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Quando o mouse sair da área das estrelas, volta para a nota clicada
-    container.addEventListener('mouseleave', function () {
-        renderizarEstrelas(notaSelecionada);
-    });
 
-    // preview da imagem (AGORA SEGURO)
-    if (inputImg) {
-        inputImg.addEventListener('change', function () {
-            const file = this.files[0];
-            if (file) {
-                preview.src = URL.createObjectURL(file);
-            }
-        });
-    }
-
-});
 
 const canvas = document.getElementById("stars")
 const ctx = canvas.getContext("2d")

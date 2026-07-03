@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Album;
+use App\Models\Artist;
+use App\Models\Genre;
+use App\Models\Music;
 
 class MusicaControler extends Controller
 {
@@ -19,7 +23,11 @@ class MusicaControler extends Controller
      */
     public function create()
     {
-        return view('cadastro_musica');
+        return view('cadastro_musica',[
+        'albums' => Album::all(),
+        'artists' => Artist::all(),
+        'genres' => Genre::all(),
+    ]);
     }
 
     /**

@@ -18,6 +18,8 @@ return new class extends Migration
 
     $table->string('image')->nullable();
 
+    $table->integer('rating')->nullable();
+
     $table->text('description')->nullable();
 
     $table->unsignedBigInteger('album_id');
